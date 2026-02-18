@@ -1,0 +1,5 @@
+# For local: model name (default all-mpnet-base-v2)
+EMBEDDING_MODEL=all-mpnet-base-v2
+
+# For API: set one of these
+OPENAI_API_KEY=
