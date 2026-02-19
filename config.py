@@ -28,11 +28,17 @@ SAMPLE_SIZE: int = int(os.getenv("SAMPLE_SIZE", "0"))
 # Embedding: "local" | "openai" | "bedrock"
 EMBEDDING_BACKEND: str = os.getenv("EMBEDDING_BACKEND", "local").lower()
 EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "all-mpnet-base-v2")
+# EMBEDDING_BACKEND: str = os.getenv("EMBEDDING_BACKEND", "openai").lower()
+# EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
+
+
 
 # Summarisation (CLIO): "openai" | "bedrock" – Kura uses Instructor provider string "openai/MODEL" or "bedrock/MODEL"
 # For Bedrock set AWS credentials/region; MODEL e.g. "anthropic.claude-3-5-sonnet-20241022-v2:0"
+# OpenAI examples: gpt-4o-mini, gpt-4o, gpt-4.1, o1 (use exact API model id)
 SUMMARIZATION_BACKEND: str = os.getenv("SUMMARIZATION_BACKEND", "openai").lower()
-SUMMARIZATION_MODEL: str = os.getenv("SUMMARIZATION_MODEL", "gpt-4o-mini")
+SUMMARIZATION_MODEL: str = os.getenv("SUMMARIZATION_MODEL", "gpt-5-mini")
+SUMMARIZATION_TEMPERATURE: float = float(os.getenv("SUMMARIZATION_TEMPERATURE", "0.2"))
 
 # # Or AWS Bedrock (set AWS_REGION and credentials)
 # SUMMARIZATION_BACKEND=bedrock
